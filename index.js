@@ -29,6 +29,7 @@ client.on('ready', async () => {
     } catch (err) {
         console.log(err);
     }
+    process.exit();
 });
 
 client.initialize();
