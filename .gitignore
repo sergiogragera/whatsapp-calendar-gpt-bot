@@ -1,0 +1,15 @@
+.env
+.DS_Store
+
+### NodeJS
+node_modules
+
+### Calendar OAuth
+credentials.json
+token.json
+
+### WhatsappJS
+.wwebjs_auth
+
+### VSCode
+.devcontainer
