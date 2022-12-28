@@ -27,8 +27,8 @@ Enable Calendar API and generate OAuth desktop client credential from https://co
 * Generate event in Google Calendar with summary "Write congratulations message for my friend Peter" and description "00123456789"
 ![](resources/event.png)
 * Install the dependencies with `npm i`
-* Start the NodeJS script with command `node index.js`
-* Link the whatsapp account by scanning the QR code shows the terminal
+* Start the NodeJS script with `node index.js`
+* Link the whatsapp account by scanning the QR code that shows the terminal
 
 # Dependencies
 
