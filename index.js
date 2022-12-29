@@ -22,8 +22,8 @@ client.on('ready', async () => {
             if (event.summary) {
                 const message = convert(event.description) || await generator.generate(event.summary)
                 for (const attender of event.attendees)
-                    if (/[0-9]+@c.us]/.test(attender))
-                        client.sendMessage(attender, message);
+                    if (/[0-9]+@c.us]/.test(attender.email))
+                        client.sendMessage(attender.email, message);
             }
         }
     } catch (err) {
