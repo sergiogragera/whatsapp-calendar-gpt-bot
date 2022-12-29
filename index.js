@@ -20,10 +20,16 @@ client.on('ready', async () => {
         const events = await calendar.getEvents(calendarAuth);
         for (const event of events) {
             if (event.summary) {
-                const message = convert(event.description) || await generator.generate(event.summary)
-                for (const attender of event.attendees)
-                    if (/[0-9]+@c.us/.test(attender.email))
+                console.info(`Event found: ${event.summary}`);
+                const message = convert(event.description) || await generator.generate(event.summary);
+                console.info(`Generated message: ${message}`);
+                for (const attender of event.attendees) {
+                    if (/[0-9]+@c.us/.test(attender.email)) {
+                        console.info(`Sending message to ${attender.email}`);
                         await client.sendMessage(attender.email, message);
+                        console.info(`Message delivered to ${attender.email}`);
+                    }
+                }
             }
         }
     } catch (err) {
