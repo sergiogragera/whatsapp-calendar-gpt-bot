@@ -24,7 +24,7 @@ client.on('ready', async () => {
                 const message = convert(event.description) || await generator.generate(event.summary);
                 console.info(`Generated message: ${message}`);
                 for (const attender of event.attendees) {
-                    if (/[0-9]+@c.us/.test(attender.email)) {
+                    if (/[0-9]+@[cg].us/.test(attender.email)) {
                         console.info(`Sending message to ${attender.email}`);
                         await client.sendMessage(attender.email, message);
                         console.info(`Message delivered to ${attender.email}`);
