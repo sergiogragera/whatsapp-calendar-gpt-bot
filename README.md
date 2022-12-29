@@ -13,16 +13,16 @@ OPENAI_SECRET_KEY=sk-...HeFI (optional)
 CALENDAR_ID=86...cbf0a9fd0783c@group.calendar.google.com (primary by default)
 ```
 
-If you don't set an API key for openai the description text will be sent by default.
+If you don't set an API key for openai or add a event description, text will be sent by default.
 
 1. Generate your OpenAI API key from https://beta.openai.com/account/api-keys
-![](resources/openai.png)
+    <div><img src="resources/openai.png" height="400"></div>
 2. Generate calendar for bot purposes
-![](resources/calendar.png)
+    <div><img src="resources/calendar.png" height="400"></div>
 3. Get calendar ID from Google Calendar settings
-![](resources/calendarid.png)
+    <div><img src="resources/calendarid.png"></div>
 4. Get credentials.json file from Google Console with credentials config
-![](resources/credentials_json.png)
+    <div><img src="resources/credentials_json.png"></div>
 
 Enable Calendar API and generate OAuth desktop client credential from https://console.cloud.google.com/apis/credentials and download JSON file as credentials.json
 
