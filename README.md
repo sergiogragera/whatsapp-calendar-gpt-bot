@@ -2,7 +2,7 @@
 
 This bot sends WhatsApp messages with Google Calendar event description for today. You can integrate OpenAI to generate messages with an artificial intelligence to get these messages like "Write a birthday greeting for Peter" as summary event.
 
-The message will be sent to all attenders email in the event that match with wid (WhatsApp ID) format /[0-9]+@c.us]/ where the user is the phone number of the contact with the prefix. If my contact is +00 123 456 789 at the event I will add 00123456789@c.us as attender.
+The message will be sent to all attenders email in the event that match with wid (WhatsApp ID) format /[0-9]+@c.us/ where the user is the phone number of the contact with the prefix. If my contact is +00 123 456 789 at the event I will add 00123456789@c.us as attender.
 
 # Configuration
 
