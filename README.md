@@ -1,4 +1,4 @@
-# WhastApp Calendar GPT Bot
+# WhatsApp Calendar GPT Bot
 
 This bot sends WhatsApp messages with Google Calendar event description for today. You can integrate OpenAI to generate messages with an artificial intelligence to get these messages like "Write a birthday greeting for Peter" as summary event.
 
