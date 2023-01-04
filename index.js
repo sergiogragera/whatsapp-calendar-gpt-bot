@@ -8,6 +8,10 @@ const { convert } = require('html-to-text');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
+    puppeteer: {
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+        args: [ '--no-sandbox' ]
+    }
 })
 
 client.on('qr', qr => {
