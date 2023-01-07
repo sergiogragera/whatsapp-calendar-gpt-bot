@@ -1,4 +1,9 @@
 const got = require('got');
+ 
+function trimBreaklines(string) {
+  return string.replace(/^\s+|\s+$/g, '');;
+
+}
 
 async function generate(prompt) {
   if (process.env.OPENAI_SECRET_KEY) {
@@ -17,7 +22,10 @@ async function generate(prompt) {
     };
 
     const response = await got.post(url, { json: params, headers: headers }).json();
-    return response.choices[0].text;
+    const text = response.choices[0].text; 
+    const parsed = trimBreaklines(text);
+
+    return parsed;
   }
   return prompt;
 }
