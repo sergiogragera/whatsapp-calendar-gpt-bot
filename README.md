@@ -51,9 +51,10 @@ CALENDAR_ID=86...cbf0a9fd0783c@group.calendar.google.com (optional, primary by d
 
 1. Generate event in Google Calendar with summary "Write congratulations message for my friend Peter" and attender/s "00123456789@c.us" to generate AI message or simply add description text to send specific message.
   <img src="resources/event.png" height="300">
+
 2. Install the dependencies with `npm i`
 3. Start the NodeJS script with `npm start`
-4. Link the whatsapp account by scanning the QR code that shows the terminal
+4. Link the whatsapp account by scanning the QR code that shows the terminal 
   <img src="resources/start.png" height="400">
 
 # References
