@@ -2,7 +2,7 @@
 
 This bot sends WhatsApp messages with Google Calendar event description for today. You can integrate OpenAI to generate messages with an artificial intelligence to get these messages like "Write a birthday greeting for Peter" as summary event.
 
-<div style="display: flex;justify-content: center;"><img src="resources/event.png" height="250" style="margin-right: 30px;">&nbsp;<img src="resources/whatsapp.png" width="300"></div>
+<div style="display: flex;justify-content: center;"><img src="resources/event.png" height="250" style="margin-right: 30px;">&nbsp;<img src="resources/whatsapp.png" height="250"></div>
 
 The message will be sent to all attenders email in the event that match with wid (WhatsApp ID) format /[0-9]+@[cg].us/ where the user is the phone number of the contact with the prefix. If my contact is +00 123 456 789 at the event I will add 00123456789@c.us as attender. Domain c.us is for contact chat and g.us is for group chat.
 
@@ -54,7 +54,7 @@ CALENDAR_ID=86...cbf0a9fd0783c@group.calendar.google.com (optional, primary by d
 2. Install the dependencies with `npm i`
 3. Start the NodeJS script with `npm start`
 4. Link the whatsapp account by scanning the QR code that shows the terminal
-<img src="resources/start.png" height="300">
+<img src="resources/start.png" height="400">
 
 # References
 
