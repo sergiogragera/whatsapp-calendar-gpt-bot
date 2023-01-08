@@ -23,8 +23,6 @@ Enable Calendar API and generate OAuth desktop client credential from https://co
 <img src="resources/google.png" width="500">
 
 ## Options
-------
-
 ### 1. Use OpenAI to generate the messages
 
 If you don't set an API key for openai or add a event description, text will be sent by default. Generate your OpenAI API key from https://beta.openai.com/account/api-keys and set as `OPENAI_SECRET_KEY`
@@ -42,7 +40,6 @@ Get calendar ID from Google Calendar settings and set as `CALENDAR_ID`
 <img src="resources/calendarid.png" width="500">
 
 ## Environment variables
-------
 Create an .env file or define the following environment variables:
 
 ```
