@@ -3,6 +3,7 @@ const path = require('path');
 const process = require('process');
 const {authenticate} = require('@google-cloud/local-auth');
 const {google} = require('googleapis')
+const ical = require('node-ical');
 
 
 // If modifying these scopes, delete token.json.
@@ -70,4 +71,36 @@ async function getEvents(auth) {
   return events;
 }
 
-module.exports = { authorize, getEvents };
+function getICalEvents(files) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
+
+  let events = [];
+  files.forEach(file => {
+    const icalBody = ical.sync.parseFile(file);
+    const icalEvents = Object.keys(icalBody)
+      .filter((key) => icalBody[key].type === 'VEVENT')
+      .map((key) => icalBody[key])
+      .filter((event) => event.start >= today && event.end <= tomorrow)
+      .map((event) => {
+        let attendees = [];
+        if (Array.isArray(event.attendee))
+          attendees = event.attendee.map(attendee => ({email: attendee.params.CN}));
+        else
+          attendees.push({email: event.attendee.params.CN});
+
+        return {
+          summary: event.summary,
+          description: event.description,
+          attendees
+        };
+      });
+    
+    events = events.concat(icalEvents);
+  });
+  return events;
+}
+
+module.exports = { authorize, getEvents, getICalEvents };

@@ -55,7 +55,7 @@ if (options.help) {
         try {
             let events = [];
             if (options.ical) {
-                console.log(options);
+                events = calendar.getICalEvents(options.ical);
             }
             else {
                 const calendarAuth = await calendar.authorize();
