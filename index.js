@@ -20,8 +20,15 @@ const optionDefinitions = [
         name: 'ical',
         type: String,
         multiple: true,
-        description: 'The iCal files to find events',
+        description: 'iCal files to find events',
         typeLabel: '<files>'
+    },
+    {
+        name: 'event',
+        type: String,
+        multiple: false,
+        description: 'Test event to send',
+        typeLabel: '<event>'
     }
 ]
 
@@ -30,8 +37,8 @@ const options = commandLineArgs(optionDefinitions)
 if (options.help) {
     const usage = commandLineUsage([
         {
-            header: 'Typical Example',
-            content: 'A simple example demonstrating typical usage.'
+            header: 'Usage',
+            content:  `node index.js`
         },
         {
             header: 'Options',
@@ -54,12 +61,17 @@ if (options.help) {
     client.on('ready', async () => {
         try {
             let events = [];
-            if (options.ical) {
-                events = calendar.getICalEvents(options.ical);
+            if (options.event) {
+                events = [JSON.parse(options.event)];
             }
             else {
-                const calendarAuth = await calendar.authorize();
-                events = await calendar.getEvents(calendarAuth);
+                if (options.ical) {
+                    events = calendar.getICalEvents(options.ical);
+                }
+                else {
+                    const calendarAuth = await calendar.authorize();
+                    events = await calendar.getEvents(calendarAuth);
+                }
             }
 
             for (const event of events) {
